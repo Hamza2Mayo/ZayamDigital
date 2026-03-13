@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — ZayamDigital</title>
+<meta name="description" content="Contact ZayamDigital — get in touch with Hamza Khan Mayo for SEO, Web Development, Azure Administration, or Domain Management services."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="ZayamDigital Home">
+      <div class="logo-icon">Z</div>
+      <span class="logo-text">Zayam<span>Digital</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="nav-cta">Get Started</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.html" style="color:var(--terra);font-weight:700">Get Started →</a>
+  </div>
+</nav>
+
+<!-- ═══ CONTACT MAIN ═══ -->
+<div class="contact-page">
+  <div class="contact-grid">
+
+    <!-- LEFT: Info -->
+    <div class="contact-info reveal-l">
+      <div class="section-label">Let's Talk</div>
+      <h2>Start Your<br><span class="highlight">Project Today</span></h2>
+      <p>Whether you need an SEO audit, a new website, domain configuration, or Azure infrastructure management — ZayamDigital is ready to help. Every inquiry receives a response within 4 business hours.</p>
+
+      <div class="info-item">
+        <div class="info-icon">📧</div>
+        <div class="info-content"><h5>Email</h5><p>hello@zayamdigital.com</p></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-content"><h5>Phone / WhatsApp</h5><p>+92 300 000 0000</p></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-content"><h5>Location</h5><p>Lahore, Punjab, Pakistan<br>Remote-first — serving clients globally</p></div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">⚡</div>
+        <div class="info-content"><h5>Response Time</h5><p>Within 4 business hours</p></div>
+      </div>
+
+      <div class="office-hours">
+        <h5>🕐 Business Hours</h5>
+        <div class="hours-row"><span>Monday – Thursday</span><span>9AM – 7PM PKT</span></div>
+        <div class="hours-row"><span>Friday</span><span>9AM – 1PM PKT</span></div>
+        <div class="hours-row"><span>Saturday</span><span>10AM – 4PM PKT</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="contact-form-box reveal-r">
+      <div id="formContent">
+        <p class="form-title">Send a Message</p>
+        <p class="form-sub">Fill out the form and the ZayamDigital team will get back to you with a custom quote or to book your consultation.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="John" required/>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Smith" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@company.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (optional)</label>
+          <input type="tel" id="phone" placeholder="+1 (555) 000-0000"/>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service" required>
+            <option value="" disabled selected>Select a service...</option>
+            <option>SEO Services</option>
+            <option>Web Development</option>
+            <option>Domain & DNS Configuration</option>
+            <option>Azure Cloud Administration</option>
+            <option>Multiple Services / Full Package</option>
+            <option>Consultation / General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Project Budget (optional)</label>
+          <select id="budget">
+            <option value="" disabled selected>Select budget range...</option>
+            <option>Under $500</option>
+            <option>$500 – $2,000</option>
+            <option>$2,000 – $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="msg">Your Message</label>
+          <textarea id="msg" placeholder="Tell us about your project, goals, timeline, and any specific requirements..." required></textarea>
+        </div>
+
+        <p class="form-error" id="formError">⚠️ Please fill in all required fields.</p>
+        <button class="btn btn-primary submit-btn" id="submitBtn">Send Message →</button>
+      </div>
+
+      <!-- Success State -->
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">🎉</div>
+        <h3 class="success-title">Message Sent!</h3>
+        <p class="success-msg">Thank you for reaching out to ZayamDigital! We'll review your inquiry and respond within 4 business hours. In the meantime, feel free to explore our portfolio.</p>
+        <br>
+        <button class="btn btn-ghost" id="resetBtn" style="margin:0 auto;display:inline-flex">Send Another Message</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section" style="padding:72px 5%">
+  <div class="container" style="position:relative;z-index:1">
+    <h2 class="section-title reveal" style="font-size:clamp(1.8rem,3.5vw,2.5rem)">Not Sure Where to Start?</h2>
+    <p class="section-sub reveal" style="margin:16px auto 32px">Book a free 30-minute consultation. We'll assess your current digital presence and give you a clear action plan — no strings attached.</p>
+    <div class="cta-actions reveal">
+      <a href="#formContent" class="btn btn-primary" onclick="document.getElementById('fname').focus();window.scrollTo({top:0,behavior:'smooth'});return false">Book Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="foot-logo"><div class="logo-icon">Z</div>Zayam<span>Digital</span></div>
+        <p>Premium digital services — SEO, Web Development, Domain Management, and Azure Cloud administration. Built for growth, engineered for results.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
+          <a class="social-btn" href="#" aria-label="Twitter">𝕏</a>
+          <a class="social-btn" href="#" aria-label="GitHub">⌥</a>
+          <a class="social-btn" href="mailto:hello@zayamdigital.com" aria-label="Email">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="contact.html">SEO Optimization</a></li>
+          <li><a href="contact.html">Web Development</a></li>
+          <li><a href="contact.html">Domain & DNS</a></li>
+          <li><a href="contact.html">Azure Administration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact">
+          <p>📧 hello@zayamdigital.com</p>
+          <p>📞 +92 300 000 0000</p>
+          <p>📍 Lahore, Pakistan</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 ZayamDigital. All rights reserved. Founded by Hamza Khan Mayo.</p>
+      <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+<script src="main.js"></script>
+</body>
+</html>
