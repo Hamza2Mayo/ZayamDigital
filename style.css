@@ -26,6 +26,13 @@
   --shadow-lg:0 16px 60px rgba(100,70,40,0.16);
 }
 
+body{
+font-family: 'Inter', sans-serif;
+}
+
+h1,h2,h3,h4{
+font-family: 'Playfair Display', serif;
+}
 /* ─── RESET & BASE ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
