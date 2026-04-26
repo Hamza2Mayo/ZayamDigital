@@ -1,339 +1,670 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ZayamDigital — SEO, Web Development, Azure & Domain Services</title>
-<meta name="description" content="ZayamDigital — Expert SEO, Web Development, Domain Management and Azure Cloud Administration. Build, secure, and grow your digital presence."/>
-<meta name="keywords" content="SEO services, web development, Azure administration, domain configuration, digital agency Pakistan"/>
-<meta property="og:title" content="ZayamDigital — Digital Excellence"/>
-<meta property="og:description" content="Expert SEO, Web Development, Domain Management and Azure Cloud Administration."/>
-<meta property="og:type" content="website"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZayamDigital – IT & Digital Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #0a1628;
+      --navy2: #12213d;
+      --blue: #1a56db;
+      --blue-lt: #3b82f6;
+      --gold: #f59e0b;
+      --white: #ffffff;
+      --gray: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+    .logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--blue-lt); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #1a2f5a 100%);
+      padding: 80px 40px 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(245,158,11,0.3);
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 680px;
+      margin: 0 auto 18px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 16px;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: 7px;
+      font-size: 14.5px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--blue-lt); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: 7px;
+      font-size: 14.5px;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+
+    /* ── STATS ── */
+    .stats {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 30px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+    .stat { padding: 0 20px; }
+    .stat + .stat { border-left: 1px solid var(--border); }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 70px 40px; }
+    .section-tag {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    /* ── SERVICES ── */
+    .services-bg { background: var(--gray); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .scard {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .scard:hover {
+      border-color: #93c5fd;
+      box-shadow: 0 4px 20px rgba(26,86,219,0.08);
+    }
+    .scard-icon {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+    .icon-blue   { background: #eff6ff; }
+    .icon-amber  { background: #fffbeb; }
+    .icon-green  { background: #f0fdf4; }
+    .icon-purple { background: #faf5ff; }
+    .icon-teal   { background: #f0fdfa; }
+    .scard h3 {
+      font-size: 15.5px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .scard p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .scard-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .tag {
+      font-size: 11.5px;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    /* ── PROCESS ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 14%; right: 14%;
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .pstep {
+      text-align: center;
+      padding: 0 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .pstep-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .pstep h4 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .pstep p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── WHY US ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .why-img {
+      background: var(--navy);
+      border-radius: 12px;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      padding: 40px;
+    }
+    .why-stat-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      color: var(--white);
+    }
+    .why-stat-big span { color: var(--gold); }
+    .why-stat-label {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      text-align: center;
+    }
+    .why-points {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .why-point {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .why-check {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: #eff6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-size: 11px;
+      color: var(--blue);
+    }
+    .why-point h4 {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .why-point p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-section {
+      background: var(--navy);
+      border-radius: 14px;
+      margin: 0 40px 70px;
+      padding: 60px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cta-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .cta-text p {
+      color: rgba(255,255,255,0.6);
+      font-size: 14.5px;
+      max-width: 420px;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060e1c;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 12.5px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy {
+      color: rgba(255,255,255,0.3);
+      font-size: 12px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .process-steps::before { display: none; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 24px 70px; }
+      .hero h1 { font-size: 32px; }
+      section { padding: 50px 24px; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 24px; }
+      .stat + .stat { border-left: none; }
+      .stat:nth-child(2n+1) { border-right: 1px solid var(--border); }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .cta-section { margin: 0 20px 50px; padding: 40px 28px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ═══ NAVIGATION ═══ -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="logo" aria-label="ZayamDigital Home">
-      <div class="logo-icon">Z</div>
-      <span class="logo-text">Zayam<span>Digital</span></span>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="nav-cta">Get Started</a>
-    </div>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="active">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-    <a href="contact.html" style="color:var(--terra);font-weight:700">Get Started →</a>
-  </div>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">Zayam<span>Digital</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta">Get a Free Quote</button>
+  </nav>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="grid-bg"></div>
-  <div class="hero-orb orb1"></div>
-  <div class="hero-orb orb2"></div>
-  <div class="hero-orb orb3"></div>
-  <div class="hero-content container">
-    <div>
-      <div class="hero-badge">✦ Premium Digital Services — ZayamDigital</div>
-      <h1 class="hero-title">
-        Build, Secure,<br>
-        and <span class="highlight">Grow</span> Your<br>
-        Digital Presence
-      </h1>
-      <p class="hero-sub">
-        Expert SEO, full-stack web development, domain management, and Azure cloud administration — all under one roof. Measurable results, every time.
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Trusted IT &amp; Digital Partner</div>
+    <h1>Technology Solutions That <span>Drive Results</span></h1>
+    <p>From IT support and Microsoft services to web development and SEO — we help businesses grow with the right technology.</p>
+    <div class="hero-btns">
+      <button class="btn-primary">Explore Our Services</button>
+      <button class="btn-outline">Book a Consultation</button>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">Clients Served</div></div>
+    <div class="stat"><div class="stat-num">98%</div><div class="stat-lbl">Client Satisfaction</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Years Experience</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-lbl">Support Available</div></div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services-bg" id="services">
+    <div style="text-align:center;">
+      <div class="section-tag">What We Offer</div>
+      <div class="section-title" style="margin-bottom:10px;">Our Core Services</div>
+      <p style="color:var(--muted);font-size:15px;max-width:520px;margin:0 auto 48px;line-height:1.7;">
+        Comprehensive digital and IT services tailored to your business needs.
       </p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Get Started →</a>
-        <a href="portfolio.html" class="btn btn-ghost">View Portfolio</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>150+</strong><span>Projects Done</span></div>
-        <div class="hero-stat"><strong>98%</strong><span>Satisfaction</span></div>
-        <div class="hero-stat"><strong>6+</strong><span>Years Exp.</span></div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="float-badge top">🚀 +243% Organic Traffic</div>
-      <div class="hero-card">
-        <div class="terminal">
-          <div class="terminal-header">
-            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-          </div>
-          <div class="terminal-line"><span class="t-dim">$</span> <span class="t-terra">zayamdigital</span> <span class="t-dim">deploy --optimize</span></div>
-          <div class="terminal-line"><span class="t-green">✓</span> <span class="t-dim">SEO audit complete — 47 issues fixed</span></div>
-          <div class="terminal-line"><span class="t-green">✓</span> <span class="t-dim">Azure infra scaled to 3x capacity</span></div>
-          <div class="terminal-line"><span class="t-green">✓</span> <span class="t-dim">DNS propagated globally (23ms)</span></div>
-          <div class="terminal-line"><span class="t-gold">→</span> <span class="t-dim">Build deployed. Site is live 🎉</span></div>
-        </div>
-        <div class="hero-metrics">
-          <div class="metric-card"><div class="metric-icon">📈</div><div class="metric-val">+189%</div><div class="metric-label">SEO Growth</div></div>
-          <div class="metric-card"><div class="metric-icon">⚡</div><div class="metric-val">99ms</div><div class="metric-label">Load Time</div></div>
-          <div class="metric-card"><div class="metric-icon">☁️</div><div class="metric-val">99.9%</div><div class="metric-label">Uptime</div></div>
-          <div class="metric-card"><div class="metric-icon">🔒</div><div class="metric-val">A+</div><div class="metric-label">Security</div></div>
-        </div>
-      </div>
-      <div class="float-badge bot">💡 Azure Cost Reduced 40%</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SERVICES ═══ -->
-<section class="services">
-  <div class="container">
-    <div class="services-header reveal">
-      <div class="section-label">Core Services</div>
-      <h2 class="section-title">Everything You Need to <span class="highlight">Dominate</span> Online</h2>
-      <p class="section-sub">Comprehensive digital solutions engineered for performance and growth — from search visibility to cloud infrastructure.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card c-terra reveal">
-        <div class="svc-icon ic-terra">🔍</div>
-        <h3>SEO Services</h3>
-        <p>Technical SEO audits, keyword strategy, on-page optimization, backlink building, and performance tracking to dominate search rankings and drive qualified organic traffic.</p>
-        <div class="svc-arrow">→</div>
+      <div class="scard">
+        <div class="scard-icon icon-blue">💻</div>
+        <h3>IT Support &amp; Helpdesk</h3>
+        <p>Fast, reliable IT support for your team. Hardware troubleshooting, software issues, network setup, and ongoing maintenance.</p>
+        <div class="scard-tags">
+          <span class="tag">Remote Support</span>
+          <span class="tag">On-site</span>
+          <span class="tag">24/7</span>
+        </div>
       </div>
-      <div class="service-card c-mauve reveal" style="transition-delay:.1s">
-        <div class="svc-icon ic-mauve">💻</div>
+      <div class="scard">
+        <div class="scard-icon icon-purple">🪟</div>
+        <h3>Microsoft Services</h3>
+        <p>Microsoft 365 setup, migration, licensing, Azure cloud solutions, Teams configuration, and SharePoint management.</p>
+        <div class="scard-tags">
+          <span class="tag">Microsoft 365</span>
+          <span class="tag">Azure</span>
+          <span class="tag">Teams</span>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-icon icon-blue">🌐</div>
         <h3>Web Development</h3>
-        <p>Full-stack development with React, Node.js, WordPress, and modern frameworks. Pixel-perfect, blazing-fast, fully responsive websites built to convert visitors into clients.</p>
-        <div class="svc-arrow">→</div>
+        <p>Custom websites and web applications built for performance. Responsive design, fast load times, and modern tech stack.</p>
+        <div class="scard-tags">
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">React</span>
+        </div>
       </div>
-      <div class="service-card c-gold reveal" style="transition-delay:.2s">
-        <div class="svc-icon ic-gold">🌐</div>
-        <h3>Domain & DNS Config</h3>
-        <p>Domain acquisition strategy, DNS configuration, SSL certificates, CDN setup, and email configuration. We handle the technical plumbing so you focus on business growth.</p>
-        <div class="svc-arrow">→</div>
+      <div class="scard">
+        <div class="scard-icon icon-green">📈</div>
+        <h3>SEO &amp; Digital Marketing</h3>
+        <p>Rank higher on Google and grow your online presence. Keyword strategy, on-page SEO, technical audits, and content optimization.</p>
+        <div class="scard-tags">
+          <span class="tag">On-page SEO</span>
+          <span class="tag">Analytics</span>
+          <span class="tag">Content</span>
+        </div>
       </div>
-      <div class="service-card c-sage reveal" style="transition-delay:.3s">
-        <div class="svc-icon ic-sage">☁️</div>
-        <h3>Azure Administration</h3>
-        <p>Microsoft Azure architecture, deployment automation, cost optimization, security hardening, and 24/7 monitoring. Enterprise-grade cloud infrastructure managed with precision.</p>
-        <div class="svc-arrow">→</div>
+      <div class="scard">
+        <div class="scard-icon icon-amber">☁️</div>
+        <h3>Cloud Solutions</h3>
+        <p>Move your business to the cloud with confidence. Data backup, cloud storage, security policies, and remote access setup.</p>
+        <div class="scard-tags">
+          <span class="tag">Cloud Backup</span>
+          <span class="tag">Migration</span>
+          <span class="tag">Security</span>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-icon icon-teal">🔒</div>
+        <h3>Cybersecurity</h3>
+        <p>Protect your business from threats. Antivirus deployment, firewall setup, security audits, staff training, and compliance support.</p>
+        <div class="scard-tags">
+          <span class="tag">Firewall</span>
+          <span class="tag">Audits</span>
+          <span class="tag">Compliance</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ WHY US ═══ -->
-<section class="why-us">
-  <div class="container">
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="section-tag">How It Works</div>
+    <div class="section-title">Our Simple 4-Step Process</div>
+    <p class="section-sub">We keep things straightforward — no jargon, no surprises. Just results.</p>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pstep-num">1</div>
+        <h4>Discovery Call</h4>
+        <p>We learn about your business, your challenges, and what you need.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">2</div>
+        <h4>Custom Plan</h4>
+        <p>We propose a tailored solution with clear pricing and timelines.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">3</div>
+        <h4>Delivery</h4>
+        <p>Our team executes with minimal disruption to your day-to-day operations.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">4</div>
+        <h4>Ongoing Support</h4>
+        <p>We stay available with ongoing maintenance, monitoring, and updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="services-bg" id="why">
+    <div class="section-tag">Why Choose Us</div>
+    <div class="section-title">A Partner, Not Just a Vendor</div>
+    <p class="section-sub">We're invested in your long-term success — that's what makes us different.</p>
     <div class="why-grid">
-      <div class="reveal-l">
-        <div class="section-label">Why ZayamDigital</div>
-        <h2 class="section-title">Built for <span class="highlight">Results</span>,<br>Not Just Deliverables</h2>
-        <p class="section-sub">Deep technical expertise paired with a results-first mindset — every project engineered for measurable business impact.</p>
-        <div class="why-features">
-          <div class="why-item">
-            <div class="why-num">01</div>
-            <div><h4>Proven Expertise</h4><p>6+ years of hands-on experience across SEO, full-stack development, cloud infrastructure, and domain management for 150+ clients worldwide.</p></div>
+      <div class="why-img">
+        <div class="why-stat-big"><span>98</span>%</div>
+        <div class="why-stat-label">Client retention rate across all service lines</div>
+      </div>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-check">✓</div>
+          <div>
+            <h4>Fast Response Times</h4>
+            <p>Most IT issues resolved within hours, not days. Your downtime costs money — we know that.</p>
           </div>
-          <div class="why-item">
-            <div class="why-num">02</div>
-            <div><h4>Security-First Approach</h4><p>Every solution built with enterprise-grade security — SSL, firewalls, Azure Security Center, and hardened configurations from day one.</p></div>
+        </div>
+        <div class="why-point">
+          <div class="why-check">✓</div>
+          <div>
+            <h4>Certified Professionals</h4>
+            <p>Microsoft certified engineers and experienced developers on every project.</p>
           </div>
-          <div class="why-item">
-            <div class="why-num">03</div>
-            <div><h4>Scalable Architecture</h4><p>Cloud-native systems designed to scale with your business — from 100 to 1M users without a costly rebuild.</p></div>
+        </div>
+        <div class="why-point">
+          <div class="why-check">✓</div>
+          <div>
+            <h4>Transparent Pricing</h4>
+            <p>No hidden fees, no confusing contracts. You know exactly what you're paying for.</p>
           </div>
-          <div class="why-item">
-            <div class="why-num">04</div>
-            <div><h4>Transparent Reporting</h4><p>Real-time dashboards, weekly reports, and clear KPI tracking so you always know exactly what's working and what ROI you're getting.</p></div>
+        </div>
+        <div class="why-point">
+          <div class="why-check">✓</div>
+          <div>
+            <h4>Business-Focused Approach</h4>
+            <p>We don't just fix tech problems — we align our solutions with your business goals.</p>
           </div>
         </div>
       </div>
-      <div class="reveal-r">
-        <div class="orbit-grid">
-          <div class="orbit-card"><h4>SEO Rankings</h4><p>Average 8.3× increase in keyword rankings within 6 months of engagement.</p><span class="orbit-label lbl-terra">SEO</span></div>
-          <div class="orbit-card"><h4>Load Speed</h4><p>Sub-100ms load times via optimized builds and global CDN deployment.</p><span class="orbit-label lbl-mauve">Dev</span></div>
-          <div class="orbit-card"><h4>Cloud Costs</h4><p>Average 38% Azure cost reduction through right-sizing and automation.</p><span class="orbit-label lbl-sage">Azure</span></div>
-          <div class="orbit-card"><h4>Uptime</h4><p>99.98% uptime across all managed infrastructure over 24 months.</p><span class="orbit-label lbl-gold">Infra</span></div>
-        </div>
-      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-section" id="contact">
+    <div class="cta-text">
+      <h2>Ready to Get Started?</h2>
+      <p>Book a free 30-minute consultation and let's talk about how we can help your business grow.</p>
+    </div>
+    <div class="cta-btns">
+      <button class="btn-primary" style="padding:14px 28px;font-size:15px;">Book a Free Consultation</button>
+      <button class="btn-outline" style="padding:14px 28px;font-size:15px;border-color:rgba(255,255,255,0.3);color:white;">View Case Studies</button>
     </div>
   </div>
-</section>
 
-<!-- ═══ PROCESS ═══ -->
-<section class="process">
-  <div class="container">
-    <div class="process-header reveal">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Simple Process, <span class="highlight">Exceptional</span> Results</h2>
-      <p class="section-sub">A clear, collaborative workflow that keeps you informed at every stage — from discovery call to launch day.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal" style="transition-delay:.05s">
-        <div class="step-circle active"><span>💬</span><span class="step-num">1</span></div>
-        <h4>Consultation</h4>
-        <p>Free discovery call to understand your goals, current state, and success metrics.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:.15s">
-        <div class="step-circle"><span>🗺️</span><span class="step-num">2</span></div>
-        <h4>Strategy</h4>
-        <p>Custom roadmap built around your specific goals, budget, and timeline.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:.25s">
-        <div class="step-circle"><span>⚙️</span><span class="step-num">3</span></div>
-        <h4>Implementation</h4>
-        <p>Expert execution with regular updates, testing, and quality assurance checks.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:.35s">
-        <div class="step-circle"><span>🚀</span><span class="step-num">4</span></div>
-        <h4>Launch & Support</h4>
-        <p>Smooth deployment, handover documentation, and ongoing support package.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="footer-logo">Zayam<span>Digital</span></a>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 ZayamDigital. All rights reserved.</div>
+  </footer>
 
-<!-- ═══ STATS ═══ -->
-<section class="stats-section">
-  <div class="stats-inner">
-    <div class="stat-item reveal"><div class="stat-number" data-target="150">0</div><div class="stat-label">Projects Completed</div></div>
-    <div class="stat-item reveal" style="transition-delay:.1s"><div class="stat-number" data-target="87">0</div><div class="stat-label">Clients Served</div></div>
-    <div class="stat-item reveal" style="transition-delay:.2s"><div class="stat-number" data-target="6">0</div><div class="stat-label">Years Experience</div></div>
-    <div class="stat-item reveal" style="transition-delay:.3s"><div class="stat-number" data-target="98">0</div><div class="stat-label">% Client Satisfaction</div></div>
-  </div>
-</section>
-
-<!-- ═══ TESTIMONIALS ═══ -->
-<section class="testimonials">
-  <div class="container">
-    <div class="testi-header reveal">
-      <div class="section-label">Client Stories</div>
-      <h2 class="section-title">Trusted by <span class="highlight">Growing Businesses</span></h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal" style="--tc-grad:linear-gradient(90deg,var(--terra),var(--gold))">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"ZayamDigital transformed our online presence completely. Organic traffic tripled in 4 months and Azure costs dropped by 35%. Absolutely outstanding work and communication."</p>
-        <div class="testi-author"><div class="author-avatar" style="background:linear-gradient(135deg,var(--terra),var(--gold))">A</div><div><div class="author-name">Ahmed Al-Rashid</div><div class="author-role">CEO, TechVenture MENA</div></div></div>
-      </div>
-      <div class="testi-card reveal" style="transition-delay:.1s;--tc-grad:linear-gradient(90deg,var(--mauve),#C484B5)">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"Professional, responsive, and technically exceptional. ZayamDigital rebuilt our entire platform in 6 weeks and the performance improvement was absolutely night and day."</p>
-        <div class="testi-author"><div class="author-avatar" style="background:linear-gradient(135deg,var(--mauve),#C484B5)">S</div><div><div class="author-name">Sarah Mitchell</div><div class="author-role">Founder, Bloom Retail Co.</div></div></div>
-      </div>
-      <div class="testi-card reveal" style="transition-delay:.2s;--tc-grad:linear-gradient(90deg,var(--sage),var(--sage-lt))">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"Their domain and DNS expertise saved us from a catastrophic migration. Handled everything — SSL, DNS, email — flawlessly. The best tech investment we made this year."</p>
-        <div class="testi-author"><div class="author-avatar" style="background:linear-gradient(135deg,var(--sage),var(--sage-lt))">M</div><div><div class="author-name">Marcus Chen</div><div class="author-role">CTO, Nexus Logistics</div></div></div>
-      </div>
-      <div class="testi-card reveal" style="transition-delay:.3s;--tc-grad:linear-gradient(90deg,var(--gold),var(--gold-lt))">
-        <div class="stars">★★★★★</div>
-        <p class="testi-text">"We ranked on page one for 12 high-value keywords within 5 months. The SEO strategy was data-driven and the results speak for themselves. Incredible ROI."</p>
-        <div class="testi-author"><div class="author-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-lt))">F</div><div><div class="author-name">Fatima Siddiqui</div><div class="author-role">Marketing Director, Pulse Agency</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TECH STACK ═══ -->
-<section class="tech-stack">
-  <div class="container">
-    <div class="tech-header reveal">
-      <div class="section-label">Tech Stack</div>
-      <h2 class="section-title">Tools We <span class="highlight">Master</span></h2>
-      <p class="section-sub" style="margin:0 auto">Battle-tested technologies chosen for performance, scalability, and reliability.</p>
-    </div>
-    <div class="tech-logos reveal">
-      <div class="tech-chip"><span>⚛️</span> React</div>
-      <div class="tech-chip"><span>🟢</span> Node.js</div>
-      <div class="tech-chip"><span>🔷</span> WordPress</div>
-      <div class="tech-chip"><span>☁️</span> Microsoft Azure</div>
-      <div class="tech-chip"><span>🔥</span> Cloudflare</div>
-      <div class="tech-chip"><span>🐳</span> Docker</div>
-      <div class="tech-chip"><span>📊</span> Google Analytics</div>
-      <div class="tech-chip"><span>🔍</span> Search Console</div>
-      <div class="tech-chip"><span>⚡</span> Next.js</div>
-      <div class="tech-chip"><span>🐙</span> GitHub Actions</div>
-      <div class="tech-chip"><span>🛡️</span> Azure DevOps</div>
-      <div class="tech-chip"><span>📡</span> Terraform</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA ═══ -->
-<section class="cta-section">
-  <div class="container" style="position:relative;z-index:1">
-    <div class="section-label reveal" style="display:inline-flex">Let's Build Together</div>
-    <h2 class="section-title reveal" style="margin-top:16px">Ready to Transform Your<br><span class="highlight">Digital Presence?</span></h2>
-    <p class="section-sub reveal">Book a free consultation and discover how ZayamDigital can accelerate your growth with measurable results.</p>
-    <div class="cta-actions reveal">
-      <a href="contact.html" class="btn btn-primary">Start a Project →</a>
-      <a href="contact.html" class="btn btn-cta-ghost">Schedule Free Consultation</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="foot-logo"><div class="logo-icon">Z</div>Zayam<span>Digital</span></div>
-        <p>Premium digital services — SEO, Web Development, Domain Management, and Azure Cloud administration. Built for growth, engineered for results.</p>
-        <div class="footer-social">
-          <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
-          <a class="social-btn" href="#" aria-label="Twitter">𝕏</a>
-          <a class="social-btn" href="#" aria-label="GitHub">⌥</a>
-          <a class="social-btn" href="mailto:hello@zayamdigital.com" aria-label="Email">✉</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="contact.html">SEO Optimization</a></li>
-          <li><a href="contact.html">Web Development</a></li>
-          <li><a href="contact.html">Domain & DNS</a></li>
-          <li><a href="contact.html">Azure Administration</a></li>
-          <li><a href="contact.html">Consulting</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Navigate</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Get in Touch</h5>
-        <div class="footer-contact">
-          <p>📧 hello@zayamdigital.com</p>
-          <p>📞 +92 300 000 0000</p>
-          <p>⏰ Mon–Fri, 9AM–6PM PKT</p>
-          <p>📍 Lahore, Pakistan</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2024 ZayamDigital. All rights reserved. Founded by Hamza Khan Mayo.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
-<script src="main.js"></script>
 </body>
 </html>
