@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZayamDigital – IT & Digital Services</title>
+  <meta name="description" content="ZayamDigital offers IT support, Microsoft 365, web development, SEO, cloud solutions and cybersecurity services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #0a1628;
+      --navy2: #12213d;
+      --blue: #1a56db;
+      --blue-lt: #3b82f6;
+      --gold: #f59e0b;
+      --white: #ffffff;
+      --gray: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 200; }
+    .logo { font-family: 'Playfair Display', serif; color: var(--white); font-size: 20px; text-decoration: none; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 13.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--blue); color: var(--white); border: none; padding: 9px 20px; border-radius: 6px; font-size: 13.5px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--blue-lt); }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 55%, #1a2f5a 100%); padding: 90px 48px 100px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content:''; position:absolute; top:-100px; right:-100px; width:400px; height:400px; border-radius:50%; border:1px solid rgba(255,255,255,0.04); }
+    .hero::after  { content:''; position:absolute; bottom:-80px; left:-80px; width:300px; height:300px; border-radius:50%; border:1px solid rgba(255,255,255,0.04); }
+    .hero-badge { display:inline-block; background:rgba(245,158,11,0.15); color:var(--gold); font-size:11.5px; font-weight:500; padding:5px 14px; border-radius:20px; border:1px solid rgba(245,158,11,0.3); margin-bottom:22px; letter-spacing:0.6px; text-transform:uppercase; }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:52px; color:var(--white); line-height:1.13; max-width:700px; margin:0 auto 20px; }
+    .hero h1 span { color:var(--gold); }
+    .hero p { color:rgba(255,255,255,0.62); font-size:16.5px; max-width:520px; margin:0 auto 38px; line-height:1.75; font-weight:300; }
+    .hero-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .btn-primary { background:var(--blue); color:var(--white); padding:13px 28px; border-radius:7px; font-size:14.5px; font-weight:500; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; transition:background 0.2s; }
+    .btn-primary:hover { background:var(--blue-lt); }
+    .btn-outline { background:transparent; color:var(--white); padding:13px 28px; border-radius:7px; font-size:14.5px; font-weight:500; border:1px solid rgba(255,255,255,0.3); cursor:pointer; font-family:'DM Sans',sans-serif; transition:border-color 0.2s; }
+    .btn-outline:hover { border-color:rgba(255,255,255,0.75); }
+
+    /* STATS */
+    .stats { background:var(--white); border-bottom:1px solid var(--border); padding:32px 48px; display:grid; grid-template-columns:repeat(4,1fr); text-align:center; }
+    .stat { padding:0 20px; }
+    .stat + .stat { border-left:1px solid var(--border); }
+    .stat-num { font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--navy); line-height:1; }
+    .stat-lbl { font-size:12.5px; color:var(--muted); margin-top:5px; }
+
+    /* SECTIONS */
+    section { padding:76px 48px; }
+    .services-bg, .portfolio-bg { background:var(--gray); }
+    .section-tag { font-size:11.5px; font-weight:500; color:var(--blue); text-transform:uppercase; letter-spacing:1.1px; margin-bottom:10px; }
+    .section-title { font-family:'Playfair Display',serif; font-size:36px; color:var(--navy); margin-bottom:12px; line-height:1.2; }
+    .section-sub { color:var(--muted); font-size:15px; max-width:500px; line-height:1.75; margin-bottom:50px; }
+
+    /* SERVICES */
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .scard { background:var(--white); border:1px solid var(--border); border-radius:10px; padding:28px 24px; transition:border-color 0.2s, box-shadow 0.2s; }
+    .scard:hover { border-color:#93c5fd; box-shadow:0 4px 24px rgba(26,86,219,0.09); }
+    .scard-icon { width:44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-size:20px; }
+    .icon-blue   { background:#eff6ff; }
+    .icon-amber  { background:#fffbeb; }
+    .icon-green  { background:#f0fdf4; }
+    .icon-purple { background:#faf5ff; }
+    .icon-teal   { background:#f0fdfa; }
+    .scard h3 { font-size:15.5px; font-weight:500; color:var(--navy); margin-bottom:8px; }
+    .scard p  { font-size:13.5px; color:var(--muted); line-height:1.65; }
+    .scard-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+    .tag { font-size:11.5px; background:#f1f5f9; color:#475569; padding:3px 10px; border-radius:12px; }
+
+    /* PORTFOLIO */
+    .portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .pcard { background:var(--white); border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:box-shadow 0.2s, transform 0.2s; }
+    .pcard:hover { box-shadow:0 8px 32px rgba(10,22,40,0.12); transform:translateY(-3px); }
+    .pcard-img { height:168px; display:flex; align-items:center; justify-content:center; font-size:36px; position:relative; }
+    .pcard-img-1 { background:linear-gradient(135deg,#0a1628,#1a56db); }
+    .pcard-img-2 { background:linear-gradient(135deg,#064e3b,#059669); }
+    .pcard-img-3 { background:linear-gradient(135deg,#4c1d95,#7c3aed); }
+    .pcard-img-4 { background:linear-gradient(135deg,#78350f,#d97706); }
+    .pcard-img-5 { background:linear-gradient(135deg,#1e3a5f,#2563eb); }
+    .pcard-img-6 { background:linear-gradient(135deg,#831843,#db2777); }
+    .pcard-badge { position:absolute; top:12px; left:12px; background:rgba(255,255,255,0.15); color:#fff; font-size:11px; padding:3px 10px; border-radius:10px; }
+    .pcard-body { padding:20px; }
+    .pcard-body h3 { font-size:15px; font-weight:500; color:var(--navy); margin-bottom:6px; }
+    .pcard-body p  { font-size:13px; color:var(--muted); line-height:1.6; margin-bottom:14px; }
+    .pcard-meta { display:flex; gap:8px; flex-wrap:wrap; }
+
+    /* PROCESS */
+    .process-steps { display:grid; grid-template-columns:repeat(4,1fr); position:relative; }
+    .process-steps::before { content:''; position:absolute; top:28px; left:14%; right:14%; height:1px; background:var(--border); z-index:0; }
+    .pstep { text-align:center; padding:0 16px; position:relative; z-index:1; }
+    .pstep-num { width:56px; height:56px; border-radius:50%; background:var(--navy); color:var(--white); font-family:'Playfair Display',serif; font-size:18px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+    .pstep h4 { font-size:14px; font-weight:500; color:var(--navy); margin-bottom:6px; }
+    .pstep p  { font-size:12.5px; color:var(--muted); line-height:1.6; }
+
+    /* WHY US */
+    .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
+    .why-img { background:var(--navy); border-radius:12px; min-height:340px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:14px; padding:44px; }
+    .why-stat-big { font-family:'Playfair Display',serif; font-size:60px; color:var(--white); }
+    .why-stat-big span { color:var(--gold); }
+    .why-stat-label { color:rgba(255,255,255,0.55); font-size:14px; text-align:center; }
+    .why-points { display:flex; flex-direction:column; gap:22px; }
+    .why-point { display:flex; gap:14px; align-items:flex-start; }
+    .why-check { width:22px; height:22px; border-radius:50%; background:#eff6ff; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; font-size:11px; color:var(--blue); }
+    .why-point h4 { font-size:14.5px; font-weight:500; color:var(--navy); margin-bottom:4px; }
+    .why-point p  { font-size:13px; color:var(--muted); line-height:1.6; }
+
+    /* CONTACT */
+    .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:48px; align-items:start; }
+    .contact-info { display:flex; flex-direction:column; gap:24px; }
+    .cinfo-item { display:flex; gap:14px; align-items:flex-start; }
+    .cinfo-icon { width:42px; height:42px; border-radius:8px; background:#eff6ff; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+    .cinfo-item h4 { font-size:14px; font-weight:500; color:var(--navy); margin-bottom:3px; }
+    .cinfo-item p  { font-size:13px; color:var(--muted); line-height:1.6; }
+    .contact-form { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:32px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:0; }
+    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .form-group label { font-size:13px; font-weight:500; color:var(--navy); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { border:1px solid var(--border); border-radius:7px; padding:10px 14px; font-size:14px; font-family:'DM Sans',sans-serif; color:var(--text); outline:none; transition:border-color 0.2s; background:var(--white); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--blue); }
+    .form-group textarea { resize:vertical; min-height:110px; }
+    .form-btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:6px; }
+    .btn-book { background:transparent; color:var(--blue); border:1px solid var(--blue); padding:11px 20px; border-radius:7px; font-size:14px; font-weight:500; cursor:pointer; font-family:'DM Sans',sans-serif; transition:background 0.2s, color 0.2s; }
+    .btn-book:hover { background:var(--blue); color:var(--white); }
+    .form-success { display:none; background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:14px 18px; color:#166534; font-size:14px; margin-top:14px; }
+
+    /* BOOKING POPUP */
+    .popup-overlay { display:none; position:fixed; inset:0; background:rgba(10,22,40,0.6); z-index:500; align-items:center; justify-content:center; padding:20px; }
+    .popup-overlay.active { display:flex; }
+    .popup-box { background:var(--white); border-radius:14px; padding:40px; max-width:480px; width:100%; position:relative; }
+    .popup-close { position:absolute; top:14px; right:18px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--muted); line-height:1; }
+    .popup-close:hover { color:var(--text); }
+    .popup-box h2 { font-family:'Playfair Display',serif; font-size:24px; color:var(--navy); margin-bottom:8px; }
+    .popup-box > div > p { font-size:14px; color:var(--muted); margin-bottom:24px; line-height:1.65; }
+    .popup-slots { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+    .slot-btn { border:1px solid var(--border); border-radius:8px; padding:12px 10px; text-align:center; cursor:pointer; background:var(--white); font-family:'DM Sans',sans-serif; transition:border-color 0.2s, background 0.2s; }
+    .slot-btn:hover { border-color:var(--blue); background:#eff6ff; }
+    .slot-btn.selected { border-color:var(--blue); background:#eff6ff; }
+    .slot-day { font-size:12px; color:var(--muted); }
+    .slot-time { font-size:14px; font-weight:500; color:var(--navy); margin-top:2px; }
+    .popup-confirm { width:100%; }
+    .popup-success { display:none; text-align:center; padding:20px 0; }
+    .popup-success .check { font-size:48px; margin-bottom:12px; }
+    .popup-success h3 { font-family:'Playfair Display',serif; font-size:22px; color:var(--navy); margin-bottom:8px; }
+    .popup-success p { font-size:14px; color:var(--muted); }
+
+    /* CTA BANNER */
+    .cta-section { background:var(--navy); border-radius:14px; margin:0 48px 76px; padding:60px 52px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
+    .cta-text h2 { font-family:'Playfair Display',serif; font-size:30px; color:var(--white); margin-bottom:10px; }
+    .cta-text p  { color:rgba(255,255,255,0.58); font-size:14.5px; max-width:420px; }
+
+    /* FOOTER */
+    footer { background:#060e1c; padding:48px 48px 28px; }
+    .footer-top { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+    .footer-brand p { font-size:13px; color:rgba(255,255,255,0.42); line-height:1.75; margin-top:12px; max-width:220px; }
+    .footer-col h4 { font-size:12px; font-weight:500; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.9px; margin-bottom:16px; }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .footer-col ul a { font-size:13.5px; color:rgba(255,255,255,0.42); text-decoration:none; transition:color 0.2s; }
+    .footer-col ul a:hover { color:rgba(255,255,255,0.85); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,0.07); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+    .footer-copy { font-size:12.5px; color:rgba(255,255,255,0.28); }
+    .footer-domain { font-size:12.5px; color:rgba(245,158,11,0.7); }
+    .footer-logo { font-family:'Playfair Display',serif; color:var(--white); font-size:18px; text-decoration:none; }
+    .footer-logo span { color:var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .services-grid, .portfolio-grid { grid-template-columns:repeat(2,1fr); }
+      .contact-grid { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:768px) {
+      nav { padding:0 20px; }
+      .nav-links { display:none; }
+      .hero { padding:60px 24px 72px; }
+      .hero h1 { font-size:34px; }
+      section { padding:52px 24px; }
+      .stats { grid-template-columns:repeat(2,1fr); gap:20px; padding:24px; }
+      .stat + .stat { border-left:none; }
+      .stat:nth-child(odd) { border-right:1px solid var(--border); }
+      .services-grid, .portfolio-grid { grid-template-columns:1fr; }
+      .process-steps { grid-template-columns:1fr 1fr; gap:32px; }
+      .process-steps::before { display:none; }
+      .why-grid { grid-template-columns:1fr; }
+      .cta-section { margin:0 20px 52px; padding:40px 28px; }
+      .form-row { grid-template-columns:1fr; }
+      footer { padding:36px 24px 20px; }
+      .footer-top { grid-template-columns:1fr; gap:28px; }
+      .popup-slots { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Zayam<span>Digital</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openPopup()">Book a Call</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Trusted IT &amp; Digital Partner</div>
+  <h1>Technology Solutions That <span>Drive Results</span></h1>
+  <p>From IT support and Microsoft services to web development and SEO — we help businesses grow with the right technology.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Our Services</button>
+    <button class="btn-outline" onclick="openPopup()">Book a Free Call</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">Clients Served</div></div>
+  <div class="stat"><div class="stat-num">98%</div><div class="stat-lbl">Client Satisfaction</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Years Experience</div></div>
+  <div class="stat"><div class="stat-num">24/7</div><div class="stat-lbl">Support Available</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div style="text-align:center;">
+    <div class="section-tag">What We Offer</div>
+    <div class="section-title" style="margin-bottom:10px;">Our Core Services</div>
+    <p style="color:var(--muted);font-size:15px;max-width:520px;margin:0 auto 50px;line-height:1.75;">Comprehensive digital and IT services tailored to your business needs.</p>
+  </div>
+  <div class="services-grid">
+    <div class="scard"><div class="scard-icon icon-blue">💻</div><h3>IT Support &amp; Helpdesk</h3><p>Fast, reliable IT support for your team. Hardware troubleshooting, software issues, network setup, and ongoing maintenance.</p><div class="scard-tags"><span class="tag">Remote Support</span><span class="tag">On-site</span><span class="tag">24/7</span></div></div>
+    <div class="scard"><div class="scard-icon icon-purple">🪟</div><h3>Microsoft Services</h3><p>Microsoft 365 setup, migration, licensing, Azure cloud solutions, Teams configuration, and SharePoint management.</p><div class="scard-tags"><span class="tag">Microsoft 365</span><span class="tag">Azure</span><span class="tag">Teams</span></div></div>
+    <div class="scard"><div class="scard-icon icon-blue">🌐</div><h3>Web Development</h3><p>Custom websites and web applications built for performance. Responsive design, fast load times, and modern tech stack.</p><div class="scard-tags"><span class="tag">HTML/CSS</span><span class="tag">Node.js</span><span class="tag">React</span></div></div>
+    <div class="scard"><div class="scard-icon icon-green">📈</div><h3>SEO &amp; Digital Marketing</h3><p>Rank higher on Google and grow your online presence. Keyword strategy, on-page SEO, technical audits, and content optimization.</p><div class="scard-tags"><span class="tag">On-page SEO</span><span class="tag">Analytics</span><span class="tag">Content</span></div></div>
+    <div class="scard"><div class="scard-icon icon-amber">☁️</div><h3>Cloud Solutions</h3><p>Move your business to the cloud with confidence. Data backup, cloud storage, security policies, and remote access setup.</p><div class="scard-tags"><span class="tag">Cloud Backup</span><span class="tag">Migration</span><span class="tag">Security</span></div></div>
+    <div class="scard"><div class="scard-icon icon-teal">🔒</div><h3>Cybersecurity</h3><p>Protect your business from threats. Antivirus deployment, firewall setup, security audits, staff training, and compliance support.</p><div class="scard-tags"><span class="tag">Firewall</span><span class="tag">Audits</span><span class="tag">Compliance</span></div></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-tag">Our Work</div>
+  <div class="section-title">Recent Projects</div>
+  <p class="section-sub">A selection of recent client work across web, IT, and digital services.</p>
+  <div class="portfolio-grid">
+    <div class="pcard"><div class="pcard-img pcard-img-1"><span>🏢</span><span class="pcard-badge">Web Dev</span></div><div class="pcard-body"><h3>Corporate Intranet Portal</h3><p>Built a full internal portal for a 200-staff company using SharePoint and custom web components.</p><div class="pcard-meta"><span class="tag">SharePoint</span><span class="tag">Microsoft 365</span></div></div></div>
+    <div class="pcard"><div class="pcard-img pcard-img-2"><span>🛒</span><span class="pcard-badge">E-Commerce</span></div><div class="pcard-body"><h3>E-Commerce Store Revamp</h3><p>Redesigned and re-platformed a retail store, improving page speed by 60% and doubling conversions.</p><div class="pcard-meta"><span class="tag">Web Dev</span><span class="tag">SEO</span></div></div></div>
+    <div class="pcard"><div class="pcard-img pcard-img-3"><span>☁️</span><span class="pcard-badge">Cloud</span></div><div class="pcard-body"><h3>Azure Cloud Migration</h3><p>Migrated a law firm's entire on-premise infrastructure to Azure with zero downtime.</p><div class="pcard-meta"><span class="tag">Azure</span><span class="tag">IT Support</span></div></div></div>
+    <div class="pcard"><div class="pcard-img pcard-img-4"><span>📊</span><span class="pcard-badge">SEO</span></div><div class="pcard-body"><h3>SEO Growth Campaign</h3><p>Took a local services business from page 4 to position 1 on Google within 5 months.</p><div class="pcard-meta"><span class="tag">SEO</span><span class="tag">Content</span></div></div></div>
+    <div class="pcard"><div class="pcard-img pcard-img-5"><span>🔐</span><span class="pcard-badge">Security</span></div><div class="pcard-body"><h3>Cybersecurity Overhaul</h3><p>Full security audit and remediation for a financial services firm — firewall, MFA, and staff training.</p><div class="pcard-meta"><span class="tag">Cybersecurity</span><span class="tag">Compliance</span></div></div></div>
+    <div class="pcard"><div class="pcard-img pcard-img-6"><span>📱</span><span class="pcard-badge">Web Dev</span></div><div class="pcard-body"><h3>Booking Platform</h3><p>Custom-built appointment booking system with automated reminders and calendar sync.</p><div class="pcard-meta"><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div></div></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="services-bg" id="process">
+  <div class="section-tag">How It Works</div>
+  <div class="section-title">Our Simple 4-Step Process</div>
+  <p class="section-sub">No jargon, no surprises — just a clear path from problem to solution.</p>
+  <div class="process-steps">
+    <div class="pstep"><div class="pstep-num">1</div><h4>Discovery Call</h4><p>We learn about your business, challenges, and goals in a free 30-min call.</p></div>
+    <div class="pstep"><div class="pstep-num">2</div><h4>Custom Plan</h4><p>We propose a tailored solution with clear pricing and realistic timelines.</p></div>
+    <div class="pstep"><div class="pstep-num">3</div><h4>Delivery</h4><p>Our team executes with minimal disruption to your day-to-day operations.</p></div>
+    <div class="pstep"><div class="pstep-num">4</div><h4>Ongoing Support</h4><p>We stay available with maintenance, monitoring, and continuous improvement.</p></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-tag">Why Choose Us</div>
+  <div class="section-title">A Partner, Not Just a Vendor</div>
+  <p class="section-sub">We're invested in your long-term success — that's what makes us different.</p>
+  <div class="why-grid">
+    <div class="why-img">
+      <div class="why-stat-big"><span>98</span>%</div>
+      <div class="why-stat-label">Client retention rate across all service lines</div>
+    </div>
+    <div class="why-points">
+      <div class="why-point"><div class="why-check">✓</div><div><h4>Fast Response Times</h4><p>Most IT issues resolved within hours, not days. Your downtime costs money — we know that.</p></div></div>
+      <div class="why-point"><div class="why-check">✓</div><div><h4>Certified Professionals</h4><p>Microsoft certified engineers and experienced developers on every project.</p></div></div>
+      <div class="why-point"><div class="why-check">✓</div><div><h4>Transparent Pricing</h4><p>No hidden fees, no confusing contracts. You know exactly what you're paying for.</p></div></div>
+      <div class="why-point"><div class="why-check">✓</div><div><h4>Business-Focused Approach</h4><p>We don't just fix tech — we align solutions with your actual business goals.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="services-bg" id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <div class="section-title">Let's Talk About Your Project</div>
+  <p class="section-sub">Send us a message, request a quote, or book a call — we'll get back to you within 24 hours.</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="cinfo-item"><div class="cinfo-icon">📧</div><div><h4>Email Us</h4><p>hello@zayamdigital.com</p></div></div>
+      <div class="cinfo-item"><div class="cinfo-icon">📞</div><div><h4>Call Us</h4><p>+44 (0) 123 456 7890</p></div></div>
+      <div class="cinfo-item"><div class="cinfo-icon">🌐</div><div><h4>Website</h4><p>www.zayamdigital.com</p></div></div>
+      <div class="cinfo-item"><div class="cinfo-icon">🕐</div><div><h4>Working Hours</h4><p>Mon–Fri, 9am–6pm GMT<br/>Emergency support 24/7</p></div></div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="John" /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith" /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@company.com" /></div>
+      <div class="form-group"><label>Company (optional)</label><input type="text" placeholder="Your company name" /></div>
+      <div class="form-group">
+        <label>Service Interested In</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>IT Support &amp; Helpdesk</option>
+          <option>Microsoft Services</option>
+          <option>Web Development</option>
+          <option>SEO &amp; Digital Marketing</option>
+          <option>Cloud Solutions</option>
+          <option>Cybersecurity</option>
+          <option>Multiple Services</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Request Type</label>
+        <select>
+          <option value="">Select type...</option>
+          <option>Send a Message</option>
+          <option>Request a Quote</option>
+          <option>Book a Call</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project or challenge..."></textarea></div>
+      <div class="form-btns">
+        <button class="btn-primary" style="flex:1;" onclick="submitForm()">Send Message &amp; Request Quote</button>
+        <button class="btn-book" onclick="openPopup()">📅 Book a Call</button>
+      </div>
+      <div class="form-success" id="formSuccess">✅ Thanks! We've received your message and will get back to you within 24 hours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-section">
+  <div class="cta-text">
+    <h2>Ready to Get Started?</h2>
+    <p>Book a free 30-minute consultation and let's talk about how we can help your business grow.</p>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <button class="btn-primary" style="padding:14px 28px;font-size:15px;" onclick="openPopup()">Book a Free Call</button>
+    <button class="btn-outline" style="padding:14px 28px;font-size:15px;border-color:rgba(255,255,255,0.3);color:white;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">Zayam<span>Digital</span></a>
+      <p>Your trusted partner for IT support, Microsoft services, web development, and digital growth.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">IT Support</a></li>
+        <li><a href="#services">Microsoft 365</a></li>
+        <li><a href="#services">Web Development</a></li>
+        <li><a href="#services">SEO</a></li>
+        <li><a href="#services">Cloud Solutions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:hello@zayamdigital.com">hello@zayamdigital.com</a></li>
+        <li><a href="tel:+441234567890">+44 (0) 123 456 7890</a></li>
+        <li><a href="https://www.zayamdigital.com">www.zayamdigital.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 ZayamDigital. All rights reserved.</div>
+    <div class="footer-domain">🌐 zayamdigital.com</div>
+  </div>
+</footer>
+
+<!-- BOOKING POPUP -->
+<div class="popup-overlay" id="bookingPopup" onclick="handleOverlayClick(event)">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">×</button>
+    <div id="popupContent">
+      <h2>Book a Free Call</h2>
+      <p>Pick a time slot that works for you — a free 30-minute discovery call, no obligation.</p>
+      <div class="popup-slots" id="slotGrid">
+        <div class="slot-btn" onclick="selectSlot(this)"><div class="slot-day">Monday</div><div class="slot-time">9:00 AM GMT</div></div>
+        <div class="slot-btn" onclick="selectSlot(this)"><div class="slot-day">Monday</div><div class="slot-time">2:00 PM GMT</div></div>
+        <div class="slot-btn" onclick="selectSlot(this)"><div class="slot-day">Tuesday</div><div class="slot-time">10:00 AM GMT</div></div>
+        <div class="slot-btn" onclick="selectSlot(this)"><div class="slot-day">Tuesday</div><div class="slot-time">3:00 PM GMT</div></div>
+        <div class="slot-btn" onclick="selectSlot(this)"><div class="slot-day">Wednesday</div><div class="slot-time">9:00 AM GMT</div></div>
+        <div class="slot-btn" onclick="selectSlot(this)"><div class="slot-day">Thursday</div><div class="slot-time">11:00 AM GMT</div></div>
+      </div>
+      <div class="form-group" style="margin-bottom:14px;"><label>Your Name</label><input type="text" id="popupName" placeholder="John Smith" /></div>
+      <div class="form-group" style="margin-bottom:20px;"><label>Email Address</label><input type="email" id="popupEmail" placeholder="john@company.com" /></div>
+      <button class="btn-primary popup-confirm" onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+    <div class="popup-success" id="popupSuccess">
+      <div class="check">✅</div>
+      <h3>You're Booked!</h3>
+      <p>We've reserved your slot and will send a confirmation to your email shortly. Looking forward to speaking with you!</p>
+    </div>
+  </div>
+</div>
+
+<!-- Also create a CNAME file hint in an HTML comment -->
+<!-- To connect zayamdigital.com: add a CNAME file in your repo root with content: zayamdigital.com -->
+
+<script>
+  function openPopup() {
+    document.getElementById('bookingPopup').classList.add('active');
+    document.getElementById('popupContent').style.display = 'block';
+    document.getElementById('popupSuccess').style.display = 'none';
+  }
+  function closePopup() {
+    document.getElementById('bookingPopup').classList.remove('active');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('bookingPopup')) closePopup();
+  }
+  function selectSlot(el) {
+    document.querySelectorAll('.slot-btn').forEach(function(b){ b.classList.remove('selected'); });
+    el.classList.add('selected');
+  }
+  function confirmBooking() {
+    var name  = document.getElementById('popupName').value.trim();
+    var email = document.getElementById('popupEmail').value.trim();
+    if (!name || !email) { alert('Please enter your name and email to continue.'); return; }
+    document.getElementById('popupContent').style.display = 'none';
+    document.getElementById('popupSuccess').style.display = 'block';
+  }
+  function submitForm() {
+    var success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+</body>
+</html>
